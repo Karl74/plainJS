@@ -1,0 +1,59 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: #cceeff;
+	font-family: sans-serif;
+}
+
+.header {
+	height: 100px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #102040;
+	color:#ddedf5;
+	font-size: 60px;
+	font-weight: bolder;
+}
+
+.panelBox {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.panel {
+	width:250px;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	border: solid 2px #102040;
+	background-color: white;
+}
+
+.screenHolder {
+	text-align: center;
+	border-bottom: solid 2px #102040;
+	background-color: white;
+}
+
+.screenDisplay {
+	text-align: right;
+	color:#ddedf5;
+	font-size: 3em;
+}
+
+.minusControl {
+	text-align: center;
+	background-color: red;
+}
+
+.minusControl:after {
+	content: "-"
+	font-size:120px;
+}
