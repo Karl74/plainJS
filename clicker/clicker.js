@@ -1,4 +1,5 @@
 // ////[VIEW]///////////////////////////////////////////
+
  let header = document.createElement("div")
  header.classList.add("header")
  header.innerHTML = "Js Clicker"
@@ -13,7 +14,7 @@
  panelBox.append(panel)
 
  let screenHolder = document.createElement("div")
- screenHolder.classList.add("scrennHolder")
+ screenHolder.classList.add("screenHolder")
  panel.append(screenHolder)
 
  let controlHolder = document.createElement("div")
@@ -36,4 +37,6 @@
  let plusButton = document.createElement("div")
  plusButton.classList.add("plus")
  controlHolder.append(plusButton)
+ 
+
  

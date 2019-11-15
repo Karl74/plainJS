@@ -29,31 +29,71 @@ body {
 	height: 250px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
-	border-radius: 3px;
-	border: solid 2px #102040;
+	border-radius: 9px;
+	border: solid 3px #102040;
 	background-color: white;
 }
 
 .screenHolder {
-	text-align: center;
 	border-bottom: solid 2px #102040;
 	background-color: white;
+	height:60%;
+	width:100%;	
+	border-radius: 9px 9px 0px 0px;
 }
 
 .screenDisplay {
-	text-align: right;
+	margin: 0px;
 	color:#ddedf5;
-	font-size: 3em;
+	font-size: 8em;
+	text-align: right;
+	width: 100%;
 }
 
-.minusControl {
+.controlHolder{
+	height: 40%;
+	display: flex;
+	justify-content: center;
+	border-radius: 0px 0px 9px 9px;
+}
+
+.minus {
+	height: 100%;
+	width: calc(250px/3);
 	text-align: center;
 	background-color: red;
+	border-radius: 0px 0px 0px 6px;
 }
 
-.minusControl:after {
-	content: "-"
-	font-size:120px;
+.minus:after {
+	content: "-";
+	font-size:80px;
+}
+
+.refresh {
+	height: 100%;
+	width: calc(250px/3);
+	text-align: center;
+	background-color: #ffff00;
+	border-right: 2px solid #102040;
+	border-left: 2px solid #102040;
+}
+
+.refresh:after {
+	content:'\267A';
+	font-size: 80px;
+}
+
+.plus {
+	height: 100%;
+	width: calc(250px/3);
+	text-align: center;
+	background-color: #008000;
+	border-radius: 0px 0px 6px 0px;
+}
+
+.plus:after {
+	content:"+";
+	font-size: 80px;
 }
