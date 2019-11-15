@@ -45,7 +45,7 @@ body {
 
 .screenDisplay {
 	margin: 0px;
-	color:#ddedf5;
+	color:#102040;
 	font-size: 8em;
 	text-align: right;
 	width: 100%;
@@ -64,11 +64,17 @@ body {
 	text-align: center;
 	background-color: red;
 	border-radius: 0px 0px 0px 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .minus:after {
 	content: "-";
-	font-size:80px;
+	font-size:115px;
+	color: #cceeff;
+	font-weight: bolder;
+	padding:0px 5px 14px 0px;
 }
 
 .refresh {
@@ -78,11 +84,14 @@ body {
 	background-color: #ffff00;
 	border-right: 2px solid #102040;
 	border-left: 2px solid #102040;
+	display: flex;
+	align-items: center;
 }
 
 .refresh:after {
-	content:'\267A';
-	font-size: 80px;
+	content:"\1F504";
+	font-size: 57px;
+	font-weight: bolder;
 }
 
 .plus {
@@ -91,9 +100,14 @@ body {
 	text-align: center;
 	background-color: #008000;
 	border-radius: 0px 0px 6px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .plus:after {
 	content:"+";
-	font-size: 80px;
+	font-size: 115px;
+	color:#cceeff;
+	font-weight: bolder;
 }
