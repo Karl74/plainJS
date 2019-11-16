@@ -67,29 +67,19 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.minus:after {
-	content: "-";
-	font-size:115px;
-	color: #cceeff;
+	font-size:78px;
+	color: #effeff;
 	font-weight: bolder;
-	padding:0px 5px 14px 0px;
 }
 
 .refresh {
 	height: 100%;
 	width: calc(250px/3);
 	text-align: center;
-	background-color: #ffff00;
-	border-right: 2px solid #102040;
-	border-left: 2px solid #102040;
+	background-color: #0078f7;
 	display: flex;
 	align-items: center;
-}
-
-.refresh:after {
-	content:"\1F504";
+	justify-content: center;
 	font-size: 57px;
 	font-weight: bolder;
 }
@@ -97,17 +87,12 @@ body {
 .plus {
 	height: 100%;
 	width: calc(250px/3);
-	text-align: center;
 	background-color: #008000;
 	border-radius: 0px 0px 6px 0px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.plus:after {
-	content:"+";
-	font-size: 115px;
-	color:#cceeff;
-	font-weight: bolder;
+	font-size: 80px;
+	color:#effeff;
+	font-weight: bolder;	
 }

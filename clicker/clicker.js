@@ -26,17 +26,39 @@
  screenDisplay.innerHTML = "0"
  screenHolder.append(screenDisplay)
 
- let minusControl = document.createElement("div")
- minusControl.classList.add("minus")
- controlHolder.append(minusControl)
+ let minusButton = document.createElement("button")
+ minusButton.classList.add("minus")
+ minusButton.innerHTML = "-"
+ controlHolder.append(minusButton)
 
- let refreshButton = document.createElement('div')
+ let refreshButton = document.createElement('button')
  refreshButton.classList.add("refresh")
+ refreshButton.innerHTML = "&#x1f504"
  controlHolder.append(refreshButton)
 
- let plusButton = document.createElement("div")
+ let plusButton = document.createElement("button")
  plusButton.classList.add("plus")
+ plusButton.innerHTML = "+"
  controlHolder.append(plusButton)
  
+ var count=0
 
+ sum = ()=> {
+ 	count ++
+ 	screenDisplay.innerHTML = count
+ }
+
+ substract = ()=>{
+ 	count--
+ 	screenDisplay.innerHTML = count
+ }
+ 
+ zero = ()=>{
+ 	count = 0
+ 	screenDisplay.innerHTML = count
+ }
+ 	
+plusButton.addEventListener("click", sum)
+minusButton.addEventListener("click", substract)
+refreshButton.addEventListener("click",zero)
  
