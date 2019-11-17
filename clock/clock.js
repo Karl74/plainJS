@@ -25,7 +25,7 @@ calendarIcon.classList.add("calendar")
 
 //^^^^ CONTROL PANEL^^^^^
 let clockPanel = document.createElement("div")
-controlPanel.classList.add("clockPanel")
+clockPanel.classList.add("clockPanel")
 document.getElementById("main").appendChild(clockPanel)
 ///// UNDER CLOCK PANEL
 
