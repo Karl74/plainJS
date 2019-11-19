@@ -35,7 +35,6 @@ clockPanel.append(circularCont)
 
 let timeDisplay = document.createElement("div")
 timeDisplay.classList.add("timeDisplay")
-timeDisplay.innerHTML = "9:00"
 circularCont.append(timeDisplay)
 
 let dateDisplay = document.createElement("div")
@@ -44,4 +43,22 @@ dateDisplay.innerHTML = "Monday 13th, 2019"
 circularCont.append(dateDisplay)
 // ^^^ CLOCK PANEL^^^^^
 
+var systemDate = new Date()
+dateDisplay.innerHTML = systemDate.toString().slice(0, 15)
 
+
+updateClock = ()=> {
+	var current = new Date()
+	var hours = current.getHours()
+	var min = current.getMinutes()
+	var sec = current.getSeconds()
+	var dayTime = (hours > 12 ? "PM" : "AM")
+
+	hours = (hours > 12 ? hours-12 : hours)
+	min = (min < 10 ? "0" + min : min)
+	sec = (sec < 10 ? "0" + sec : sec )
+
+	timeDisplay.innerHTML= `${hours}:${min}:${sec} ${dayTime}`
+}
+
+var myClock = window.setInterval(updateClock, 1000)
