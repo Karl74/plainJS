@@ -1,6 +1,11 @@
 *{
   box-sizing: border-box;
+  font-family:sans-serif; 
   margin: 0px;
+}
+
+body {
+  background-color: azure;
 }
 
 .header{
@@ -17,7 +22,55 @@
 }
 
 .controlPanel{
-  margin-top:30px;
+  margin-top: 30px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  display: inline-block;
+  position: relative;
+  height: 34px;
+  width: 60px;
+  background-color: #ccc;
+  border-radius: 15px;
+  z-index: 5;
+}
+input {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  height: 28px;
+  width: 56px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 15;
+}
+
+/*input:checked + .sliderBttn {
+  -webkit-transform:
+    translateX(26px);
+  -ms-transform:
+    translateX(26px);
+  transform: translate(26px);
+}*/
+
+input:checked + .slider {
+ background-color: #81ffef;
+}
+
+.sliderBttn {
+  position:absolute;
+  left: 2px;
+  top: 2.5px;
+  height: 28px;
+  width: 28px;
+  border-radius: 100%;
+  background-color: #f0ffff;
+  z-index: 10;
+  -webkit-transition:.4s;
+  transition:.4s;
 }
 
 .clockPanel {
@@ -37,6 +90,5 @@
   border: 20px solid #173050;
   background: #102040;
   border-radius: 100%;  
-  color: azure;
-
+  color: #81ffef;
 }

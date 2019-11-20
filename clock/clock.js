@@ -9,16 +9,21 @@ controlPanel.classList.add("controlPanel")
 document.getElementById("main").appendChild(controlPanel)
 
 /////  UNDER CONTROL PANEL
-let sliderCont = document.createElement("div")
-controlPanel.classList.add("sliderCont")
-controlPanel.append(sliderCont)
+// let sliderCont = document.createElement("div")
+// controlPanel.classList.add("sliderCont")
 
 let slider = document.createElement("div")
 slider.classList.add("slider")
+controlPanel.append(slider)
 
 let sliderInput = document.createElement("input")
 sliderInput.type = "checkbox"
 sliderInput.checked = false
+slider.append(sliderInput)
+
+let sliderBttn = document.createElement("spam")
+sliderBttn.classList.add("sliderBttn")
+slider.append(sliderBttn)
 
 let calendarIcon = document.createElement("div")
 calendarIcon.classList.add("calendar")
@@ -57,8 +62,9 @@ updateClock = ()=> {
 	hours = (hours > 12 ? hours-12 : hours)
 	min = (min < 10 ? "0" + min : min)
 	sec = (sec < 10 ? "0" + sec : sec )
-
 	timeDisplay.innerHTML= `${hours}:${min}:${sec} ${dayTime}`
 }
+
+updateClock()
 
 var myClock = window.setInterval(updateClock, 1000)
