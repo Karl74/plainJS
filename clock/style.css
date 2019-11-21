@@ -28,15 +28,13 @@ body {
   justify-content: center;
 }
 
-.slider {
+.sliderCont{
   display: inline-block;
   position: relative;
   height: 34px;
   width: 60px;
-  background-color: #ccc;
-  border-radius: 15px;
-  z-index: 5;
 }
+
 input {
   position: absolute;
   left: 2px;
@@ -48,19 +46,20 @@ input {
   z-index: 15;
 }
 
-/*input:checked + .sliderBttn {
-  -webkit-transform:
-    translateX(26px);
-  -ms-transform:
-    translateX(26px);
-  transform: translate(26px);
-}*/
-
-input:checked + .slider {
- background-color: #81ffef;
+.slider {
+  position:absolute;
+  top:0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 15px;
+  background-color: #ccc;
+  -webkit-transition:.4s;
+  transition: .4s;
 }
 
-.sliderBttn {
+.slider:after {
+  content: "";
   position:absolute;
   left: 2px;
   top: 2.5px;
@@ -68,9 +67,20 @@ input:checked + .slider {
   width: 28px;
   border-radius: 100%;
   background-color: #f0ffff;
-  z-index: 10;
   -webkit-transition:.4s;
   transition:.4s;
+}
+
+input:checked + .slider:after {
+  -webkit-transform:
+    translateX(26px);
+  -ms-transform:
+    translateX(26px);
+  transform: translate(26px);
+}
+
+input:checked + .slider {
+ background-color: #81ffef;
 }
 
 .clockPanel {
@@ -83,7 +93,6 @@ input:checked + .slider {
 .circular{
   display: flex;
   flex-direction: column;
-  text-align: space-evenly;
   align-items: center;
   width: 350px;
   height: 350px;
@@ -91,4 +100,15 @@ input:checked + .slider {
   background: #102040;
   border-radius: 100%;  
   color: #81ffef;
+}
+
+.timeDisplay {
+  margin-top: 105px;
+  font-size: 45px;
+}
+
+.dateDisplay {
+  margin-top:25px;
+  font-weight: lighter;
+  font-stretch: ultra-expanded;
 }

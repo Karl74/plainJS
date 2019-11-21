@@ -9,21 +9,18 @@ controlPanel.classList.add("controlPanel")
 document.getElementById("main").appendChild(controlPanel)
 
 /////  UNDER CONTROL PANEL
-// let sliderCont = document.createElement("div")
-// controlPanel.classList.add("sliderCont")
-
-let slider = document.createElement("div")
-slider.classList.add("slider")
-controlPanel.append(slider)
+let sliderCont = document.createElement("div")
+sliderCont.classList.add("sliderCont")
+controlPanel.append(sliderCont)
 
 let sliderInput = document.createElement("input")
 sliderInput.type = "checkbox"
 sliderInput.checked = false
-slider.append(sliderInput)
+sliderCont.append(sliderInput)
 
-let sliderBttn = document.createElement("spam")
-sliderBttn.classList.add("sliderBttn")
-slider.append(sliderBttn)
+let slider = document.createElement("div")
+slider.classList.add("slider")
+sliderCont.append(slider)
 
 let calendarIcon = document.createElement("div")
 calendarIcon.classList.add("calendar")
@@ -44,13 +41,19 @@ circularCont.append(timeDisplay)
 
 let dateDisplay = document.createElement("div")
 dateDisplay.classList.add("dateDisplay")
-dateDisplay.innerHTML = "Monday 13th, 2019"
 circularCont.append(dateDisplay)
 // ^^^ CLOCK PANEL^^^^^
 
 var systemDate = new Date()
-dateDisplay.innerHTML = systemDate.toString().slice(0, 15)
 
+showDate= (e)=>{
+	console.log(e.target.checked)
+	if(e.target.checked){
+		dateDisplay.innerHTML = systemDate.toString().slice(0, 15)
+	} else {
+		dateDisplay.innerHTML = ""
+	}
+}
 
 updateClock = ()=> {
 	var current = new Date()
@@ -68,3 +71,5 @@ updateClock = ()=> {
 updateClock()
 
 var myClock = window.setInterval(updateClock, 1000)
+
+sliderInput.addEventListener("click", showDate)
