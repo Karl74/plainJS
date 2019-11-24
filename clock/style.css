@@ -22,10 +22,15 @@ body {
 }
 
 .controlPanel{
-  margin-top: 30px;
+  margin-top: 25px;
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  font-size:34px;
 }
 
 .sliderCont{
@@ -80,11 +85,11 @@ input:checked + .slider:after {
 }
 
 input:checked + .slider {
- background-color: #81ffef;
+ background-color: #80eeff;
 }
 
 .clockPanel {
-  margin-top: 30px;
+  margin-top: 25px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -94,8 +99,8 @@ input:checked + .slider {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 350px;
-  height: 350px;
+  width: 340px;
+  height: 340px;
   border: 20px solid #173050;
   background: #102040;
   border-radius: 100%;  
@@ -103,7 +108,7 @@ input:checked + .slider {
 }
 
 .timeDisplay {
-  margin-top: 105px;
+  margin-top: 120px;
   font-size: 45px;
 }
 

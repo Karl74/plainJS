@@ -24,6 +24,8 @@ sliderCont.append(slider)
 
 let calendarIcon = document.createElement("div")
 calendarIcon.classList.add("calendar")
+calendarIcon.innerHTML= "&#x1f4c5"
+controlPanel.append(calendarIcon)
 
 //^^^^ CONTROL PANEL^^^^^
 let clockPanel = document.createElement("div")
