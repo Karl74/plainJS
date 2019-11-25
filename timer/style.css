@@ -1,0 +1,65 @@
+* {
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    background-color: azure;
+    margin: 0px;
+    padding:0px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100px;
+	width: 100%;
+	background-color:#102040;
+	color:azure;
+}
+
+.panelCont{
+	display: flex;
+	justify-content: center;
+	margin: 40px;
+}
+
+.panel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 300px;
+	width: 300px;
+	background-color: #cce6ff;
+	border: 10px solid #102040;
+	border-radius: 100%;
+}
+
+.timeControlBox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 75px;
+	width: 90%;
+	background-color: #cce6ff;
+}
+
+.timeBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-right: 15px;
+	height: 75px;
+	width: 52px;
+	background-color: #8cb3d9;
+	border-radius: 4px;
+}
+
+.timeDisplay {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
