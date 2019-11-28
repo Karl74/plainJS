@@ -15,51 +15,55 @@ let timeControlBox = document.createElement("div")
 timeControlBox.classList.add("timeControlBox")
 panel.append(timeControlBox)
 
-// >>>HOURS>>>>>>>>>>>>>>>>>>>>>>>
-let hourBox = document.createElement("div")
-hourBox.classList.add("timeBox")
-timeControlBox.append(hourBox)
 
-let hourDisplay = document.createElement("div")
-hourDisplay.classList.add("timeDisplay")
-hourDisplay.innerHTML = "00"
-hourBox.append(hourDisplay)
+function Component(unitName, parent){
+	this.unitName = unitName
+	this.parent = parent
+}
 
-let settingHoursBox = document.createElement("div")
-settingHoursBox.classList.add("settingBox")
-hourBox.append(settingHoursBox)
+Component.prototype.box = function(){
+	this.box = document.createElement("div")
+	this.box.classList = "timeBox"
+	this.parent.append(this.box)
+}
 
-let plusMin = document.createElement("button")
-plusMin.classList.add("ajustButton")
-plusMin.innerHTML= "+"
-settingHoursBox.append(plusMin)
+Component.prototype.display = function(){
+	this.display = document.createElement("div")
+	this.display.classList = "timeDisplay"
+	this.display.innerHTML = "00"
+	this.box.append(this.display)
+}
 
-let minusMin = document.createElement("button")
-minusMin.classList.add("ajustButton")
-minusMin.innerHTML= "-"
-settingHoursBox.append(minusMin)
+Component.prototype.controls = function(){
+	this.control = document.createElement("div")
+	this.control.classList = "settingBox"
+	this.box.append(this.control)
 
+	this.minusControl =document.createElement("button")
+	this.minusControl.classList = "ajustButton"
+	this.minusControl.innerHTML = "-"
+	this.control.append(this.minusControl)	
 
-// >>>[MINUTES]>>>>>>>>>>>>>>>>>>>>>>>
-let minBox = document.createElement("div")
-minBox.classList.add("timeBox")
-timeControlBox.append(minBox)
+	this.plusControl =document.createElement("button")
+	this.plusControl.classList = "ajustButton"
+	this.plusControl.innerHTML = "+"
+	this.control.append(this.plusControl)
+}
 
-let minDisplay = document.createElement("div")
-minDisplay.classList.add("timeDisplay")
-minDisplay.innerHTML = "00"
-minBox.append(minDisplay)
-
-// >>>[SECONDS]>>>>>>>>>>>>>>>>>>>>>>>
-let secBox = document.createElement("div")
-secBox.classList.add("timeBox")
-timeControlBox.append(secBox)
-
-let secDisplay = document.createElement("div")
-secDisplay.classList.add("timeDisplay")
-secDisplay.innerHTML = "00"
-secBox.append(secDisplay)
+Component.prototype.deploy = function(){
+	this.box()
+	this.display()
+	this.controls()
+}
 
 
+const hours = new Component("HOURS", timeControlBox)
+hours.deploy()
 
+const minutes = new Component("min", timeControlBox)
+minutes.deploy()
 
+const seconds = new Component ("sec", timeControlBox)
+seconds.deploy()
+
+console.log(minutes.unitName)
