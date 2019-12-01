@@ -19,6 +19,7 @@ panel.append(timeControlBox)
 function Component(unitName, parent){
 	this.unitName = unitName
 	this.parent = parent
+	this.counter = 0
 }
 
 Component.prototype.box = function(){
@@ -35,6 +36,7 @@ Component.prototype.display = function(){
 }
 
 Component.prototype.controls = function(){
+	this.add=this.add.bind(this)
 	this.control = document.createElement("div")
 	this.control.classList = "settingBox"
 	this.box.append(this.control)
@@ -47,9 +49,17 @@ Component.prototype.controls = function(){
 	this.plusControl =document.createElement("button")
 	this.plusControl.classList = "ajustButton"
 	this.plusControl.innerHTML = "+"
+	this.plusControl.addEventListener("click", this.add)
 	this.control.append(this.plusControl)
 }
 
+Component.prototype.add = function(e){
+	e.preventDefault()
+	var unit = e.target
+	// e.target.display.innerHTML = this.counter
+	console.log(unit)
+}
+/////////////////////////////////////////////////////
 Component.prototype.deploy = function(){
 	this.box()
 	this.display()
@@ -66,4 +76,3 @@ minutes.deploy()
 const seconds = new Component ("sec", timeControlBox)
 seconds.deploy()
 
-console.log(minutes.unitName)
