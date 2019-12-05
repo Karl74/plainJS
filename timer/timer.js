@@ -55,9 +55,14 @@ Component.prototype.controls = function(){
 
 Component.prototype.add = function(e){
 	e.preventDefault()
-	var unit = e.target
-	// e.target.display.innerHTML = this.counter
-	console.log(unit)
+	this.counter ++
+	this.updateDisplay(this.counter)
+	console.log(this.counter)
+}
+
+Component.prototype.updateDisplay = function(time){
+	let toDisplay = (time < 10) ? "0"+ time : time
+	this.display.innerHTML = toDisplay
 }
 /////////////////////////////////////////////////////
 Component.prototype.deploy = function(){
@@ -67,12 +72,25 @@ Component.prototype.deploy = function(){
 }
 
 
+
 const hours = new Component("HOURS", timeControlBox)
 hours.deploy()
+
+let hour_min = document.createElement("div")
+hour_min.innerHTML = ":"
+hour_min.classList.add("separator")
+timeControlBox.append(hour_min)
 
 const minutes = new Component("min", timeControlBox)
 minutes.deploy()
 
+let hour_min = document.createElement("div")
+hour_min.innerHTML = ":"
+hour_min.classList.add("separator")
+timeControlBox.append(hour_min)
+
 const seconds = new Component ("sec", timeControlBox)
 seconds.deploy()
+
+seconds.counter = 8
 
